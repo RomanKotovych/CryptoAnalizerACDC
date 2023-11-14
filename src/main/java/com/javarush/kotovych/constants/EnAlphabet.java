@@ -17,7 +17,7 @@ public class EnAlphabet implements Alphabet {
     }
 
 
-    public EnAlphabet(){
+    public EnAlphabet() {
         Arrays.sort(CHARS);
     }
 }

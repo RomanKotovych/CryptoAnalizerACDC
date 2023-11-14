@@ -17,7 +17,7 @@ public class RuAlphabet implements Alphabet {
     }
 
 
-    public RuAlphabet(){
+    public RuAlphabet() {
         Arrays.sort(CHARS);
     }
 }

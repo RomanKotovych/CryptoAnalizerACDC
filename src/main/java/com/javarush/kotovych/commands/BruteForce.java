@@ -12,7 +12,7 @@ import java.util.List;
 
 public class BruteForce extends Decoder implements Action {
     @Override
-    public String execute(Path input, int key, Path output, Alphabet language){
+    public String execute(Path input, int key, Path output, Alphabet language) {
         int validKey = findValidKey(input, language);
         return super.execute(input, validKey, output, language);
     }

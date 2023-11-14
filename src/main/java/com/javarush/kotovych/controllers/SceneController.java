@@ -43,7 +43,6 @@ public class SceneController extends CipherMethods implements Initializable {
     private TextArea textPreview;
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         modeChoose.getItems().addAll(Constants.ENCODE, Constants.DECODE, Constants.BRUTE_FORCE);
@@ -66,28 +65,28 @@ public class SceneController extends CipherMethods implements Initializable {
     }
 
     @FXML
-    void onPreviewOutputButtonClick(ActionEvent event){
+    void onPreviewOutputButtonClick(ActionEvent event) {
         try {
             String text = getTextFromFile(Path.of(outputPathTextField.getText()));
             textPreview.setText(text);
-        } catch (AppException e){
+        } catch (AppException e) {
             showError(e.getMessage(), e);
         }
     }
 
     @FXML
-    void onPreviewInputButtonClick(ActionEvent event){
+    void onPreviewInputButtonClick(ActionEvent event) {
         try {
             String text = getTextFromFile(Path.of(inputPathTextField.getText()));
             textPreview.setText(text);
-        } catch (AppException e){
+        } catch (AppException e) {
             showError(e.getMessage(), e);
         }
     }
 
 
     @FXML
-    void onSwitchPathsButtonClick(ActionEvent event){
+    void onSwitchPathsButtonClick(ActionEvent event) {
         String inputText = inputPathTextField.getText();
         String outputText = outputPathTextField.getText();
 
@@ -95,12 +94,12 @@ public class SceneController extends CipherMethods implements Initializable {
         outputPathTextField.setText(inputText);
     }
 
-    private Alphabet getLanguage(){
+    private Alphabet getLanguage() {
         try {
             return AlphabetContainer.get(languageChoose.getValue());
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             throw new AppException(Constants.NULL_LANGUAGE_EXCEPTION_TEXT, e);
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new AppException(Constants.UNKNOWN_EXCEPTION_TEXT, e);
         }
     }
@@ -119,7 +118,7 @@ public class SceneController extends CipherMethods implements Initializable {
     private int getKey() {
         try {
             String key = keyInput.getText();
-            if(key.isBlank() || key.isEmpty()){
+            if (key.isBlank() || key.isEmpty()) {
                 throw new AppException(Constants.EMPTY_KEY_EXCEPTION_TEXT);
             }
             return Integer.parseInt(key);
@@ -129,7 +128,7 @@ public class SceneController extends CipherMethods implements Initializable {
     }
 
 
-    private void showError(String message, Exception ex){
+    private void showError(String message, Exception ex) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(Constants.ERROR);
         alert.setHeaderText(null);

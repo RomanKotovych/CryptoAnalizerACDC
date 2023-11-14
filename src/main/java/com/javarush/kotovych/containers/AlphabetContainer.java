@@ -12,12 +12,12 @@ public enum AlphabetContainer {
 
     private final Alphabet alphabet;
 
-     AlphabetContainer(Alphabet alphabet){
+    AlphabetContainer(Alphabet alphabet) {
         this.alphabet = alphabet;
     }
 
-    public static Alphabet get(String alphabetName){
-        return switch (alphabetName){
+    public static Alphabet get(String alphabetName) {
+        return switch (alphabetName) {
             case Constants.RU -> RU_ALPHABET.alphabet;
             case Constants.EN -> EN_ALPHABET.alphabet;
             default -> null;
