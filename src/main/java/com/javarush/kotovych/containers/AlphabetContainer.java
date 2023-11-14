@@ -4,6 +4,7 @@ import com.javarush.kotovych.constants.Constants;
 import com.javarush.kotovych.constants.EnAlphabet;
 import com.javarush.kotovych.constants.RuAlphabet;
 
+
 public enum AlphabetContainer {
     RU_ALPHABET(new RuAlphabet()),
     EN_ALPHABET(new EnAlphabet()),

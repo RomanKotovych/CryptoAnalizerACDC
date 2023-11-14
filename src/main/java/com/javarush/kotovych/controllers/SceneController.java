@@ -98,18 +98,23 @@ public class SceneController extends CipherMethods implements Initializable {
     private Alphabet getLanguage(){
         try {
             return AlphabetContainer.get(languageChoose.getValue());
-        } catch (Exception e){
+        } catch (NullPointerException e){
             throw new AppException(Constants.NULL_LANGUAGE_EXCEPTION_TEXT, e);
+        } catch (Exception e){
+            throw new AppException(Constants.UNKNOWN_EXCEPTION_TEXT, e);
         }
     }
 
-    private Action getMode(){
+    private Action getMode() {
         try {
             return ActionContainer.get(modeChoose.getValue());
-        } catch (Exception e){
+        } catch (NullPointerException e) {
             throw new AppException(Constants.NULL_MODE_EXCEPTION_TEXT, e);
+        } catch (Exception e) {
+            throw new AppException(Constants.UNKNOWN_EXCEPTION_TEXT, e);
         }
     }
+
 
     private int getKey() {
         try {
