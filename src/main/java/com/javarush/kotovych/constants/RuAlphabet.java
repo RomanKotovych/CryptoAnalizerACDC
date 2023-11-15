@@ -9,15 +9,15 @@ public class RuAlphabet implements Alphabet {
     private final String NUMBERS = "0123456789";
     private final String SYMBOLS = "`~!@#$%^&*(){}[]<>;:'\\|?., -_+\"";
     private final String SYMBOL_CHARS = (NUMBERS + SYMBOLS);
-    private final char[] CHARS = (RU_ALPHABET + SYMBOL_CHARS).toCharArray();
+    private char[] chars = (RU_ALPHABET + SYMBOL_CHARS).toCharArray();
 
     @Override
     public char[] getChars() {
-        return CHARS;
+        return chars;
     }
 
 
     public RuAlphabet() {
-        Arrays.sort(CHARS);
+        Arrays.sort(chars);
     }
 }
